@@ -13,7 +13,6 @@ class Beranda extends StatefulWidget {
 class _BerandaState extends State<Beranda> {
   int selectedIndex = 0;
 
- 
   final widgetOptions = [
     const HomePage(),
     const About(),
@@ -31,28 +30,6 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: const Text("Home"),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Logout(),
-                  ),
-                );
-              },
-            ),
-            const ListTile(
-              title: Text("About"),
-            ),
-            const ListTile(
-              title: Text("Logout"),
-            ),
-          ],
-        ),
-      ),
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
       ),
